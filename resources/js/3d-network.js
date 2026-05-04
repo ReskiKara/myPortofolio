@@ -10,7 +10,7 @@ export function initBrainNetwork() {
     const camera = new THREE.PerspectiveCamera(
         50, container.clientWidth / container.clientHeight, 1, 1000
     );
-    camera.position.set(0, 30, 260);
+    camera.position.set(-30, 50, 240);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -134,16 +134,17 @@ export function initBrainNetwork() {
     // CNN ARCHITECTURE
     // =============================================
     const layers = [
-        { type: 'box', w: 42, h: 42, d: 2,  z: -105, color: 0x00ddff, label: 'INPUT' },
-        { type: 'box', w: 36, h: 36, d: 8,  z: -72,  color: 0x2299ff, label: 'CONV2D' },
-        { type: 'box', w: 18, h: 18, d: 8,  z: -48,  color: 0x1177cc, label: 'POOL' },
-        { type: 'box', w: 14, h: 14, d: 12, z: -22,  color: 0x3388ff, label: 'CONV2D' },
-        { type: 'box', w: 7,  h: 7,  d: 12, z: 0,    color: 0x1177cc, label: 'POOL' },
-        { type: 'box', w: 5,  h: 5,  d: 16, z: 22,   color: 0x4499ff, label: 'CONV2D' },
-        { type: 'box', w: 2,  h: 28, d: 2,  z: 46,   color: 0x7744cc, label: 'FLATTEN' },
-        { type: 'dense', n: 28, z: 66,  color: 0x9d4edd, label: 'DENSE_128' },
-        { type: 'dense', n: 14, z: 86,  color: 0xc77dff, label: 'DENSE_64' },
-        { type: 'dense', n: 4,  z: 108, color: 0x00f0ff, label: 'OUTPUT' },
+        // d = depth/thickness — made much thicker for visible 3D volume
+        { type: 'box', w: 42, h: 42, d: 18, z: -105, color: 0x00ddff, label: 'INPUT' },
+        { type: 'box', w: 36, h: 36, d: 22, z: -72,  color: 0x2299ff, label: 'CONV2D' },
+        { type: 'box', w: 18, h: 18, d: 16, z: -45,  color: 0x1177cc, label: 'POOL' },
+        { type: 'box', w: 14, h: 14, d: 24, z: -18,  color: 0x3388ff, label: 'CONV2D' },
+        { type: 'box', w: 7,  h: 7,  d: 18, z: 10,   color: 0x1177cc, label: 'POOL' },
+        { type: 'box', w: 5,  h: 5,  d: 26, z: 35,   color: 0x4499ff, label: 'CONV2D' },
+        { type: 'box', w: 4,  h: 30, d: 6,  z: 62,   color: 0x7744cc, label: 'FLATTEN' },
+        { type: 'dense', n: 28, z: 82,  color: 0x9d4edd, label: 'DENSE_128' },
+        { type: 'dense', n: 14, z: 102, color: 0xc77dff, label: 'DENSE_64' },
+        { type: 'dense', n: 4,  z: 122, color: 0x00f0ff, label: 'OUTPUT' },
     ];
 
     const layerNodes = []; // store node positions per layer for connections
@@ -326,9 +327,9 @@ export function initBrainNetwork() {
         requestAnimationFrame(animate);
         time += 0.006;
 
-        // Gentle oscillation to show 3D depth
-        group.rotation.y = Math.sin(time * 0.25) * 0.22;
-        group.rotation.x = Math.sin(time * 0.18) * 0.06;
+        // Wider oscillation to showcase 3D depth/thickness of layers
+        group.rotation.y = Math.sin(time * 0.25) * 0.45;
+        group.rotation.x = Math.sin(time * 0.18) * 0.12;
 
         // Data flow — particles stream through the CNN pipeline
         const fp = flowGeo.attributes.position.array;

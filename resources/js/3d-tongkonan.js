@@ -9,8 +9,8 @@ export function initTongkonan() {
     const camera = new THREE.PerspectiveCamera(
         50, container.clientWidth / container.clientHeight, 1, 500
     );
-    camera.position.set(40, 25, 80);
-    camera.lookAt(0, 5, 0);
+    camera.position.set(50, 15, 90);
+    camera.lookAt(0, 8, 0);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -18,6 +18,7 @@ export function initTongkonan() {
     container.appendChild(renderer.domElement);
 
     const group = new THREE.Group();
+    group.position.y = -10; // shift whole house down so it fits in frame
     scene.add(group);
 
     // =============================================
@@ -72,9 +73,9 @@ export function initTongkonan() {
     });
 
     // --- ROOF (Iconic Tongkonan curved saddle roof) ---
-    const roofPeakY = bY + bH + 12; // peak height
-    const roofOverhang = 8;          // overhang beyond body
-    const roofCurveUp = 18;          // how much the ends curve up
+    const roofPeakY = bY + bH + 8; // peak height (lower)
+    const roofOverhang = 7;         // overhang beyond body
+    const roofCurveUp = 10;         // reduced curve for realistic Tongkonan proportion
 
     // Generate roof ridge curve (the iconic curved line)
     function roofCurve(zNorm) {
