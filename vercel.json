@@ -3,10 +3,14 @@
     "builds": [
         {
             "src": "api/index.php",
-            "use": "vercel-php@0.6.2"
+            "use": "vercel-php@0.7.2"
         },
         {
-            "src": "/public/**",
+            "src": "public/build/**",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "public/favicon.ico",
             "use": "@vercel/static"
         }
     ],
@@ -16,6 +20,10 @@
             "dest": "/public/build/$1"
         },
         {
+            "src": "/favicon.ico",
+            "dest": "/public/favicon.ico"
+        },
+        {
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
@@ -23,7 +31,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "https://kara.vercel.app",
+        "APP_URL": "https://portofolio-gamma-steel-63.vercel.app",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
