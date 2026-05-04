@@ -9,8 +9,8 @@ export function initTongkonan() {
     const camera = new THREE.PerspectiveCamera(
         50, container.clientWidth / container.clientHeight, 1, 500
     );
-    camera.position.set(50, 15, 90);
-    camera.lookAt(0, 8, 0);
+    camera.position.set(55, 20, 110);
+    camera.lookAt(0, 5, 0);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -18,7 +18,7 @@ export function initTongkonan() {
     container.appendChild(renderer.domElement);
 
     const group = new THREE.Group();
-    group.position.y = -10; // shift whole house down so it fits in frame
+    group.position.y = -8; // center vertically in canvas
     scene.add(group);
 
     // =============================================
@@ -44,9 +44,9 @@ export function initTongkonan() {
 
     // --- BODY (Rectangular base structure) ---
     const bW = 12;  // half-width (x)
-    const bH = 10;  // height (y)
+    const bH = 14;  // height (y) — taller body
     const bD = 22;  // half-depth (z)
-    const bY = 8;   // base elevation (on stilts)
+    const bY = 6;   // base elevation (on stilts)
 
     // Bottom frame
     addLine([[-bW, bY, -bD], [bW, bY, -bD], [bW, bY, bD], [-bW, bY, bD], [-bW, bY, -bD]]);
@@ -73,9 +73,9 @@ export function initTongkonan() {
     });
 
     // --- ROOF (Iconic Tongkonan curved saddle roof) ---
-    const roofPeakY = bY + bH + 8; // peak height (lower)
-    const roofOverhang = 7;         // overhang beyond body
-    const roofCurveUp = 10;         // reduced curve for realistic Tongkonan proportion
+    const roofPeakY = bY + bH + 10; // peak height
+    const roofOverhang = 8;          // overhang beyond body
+    const roofCurveUp = 14;          // iconic Tongkonan sweep
 
     // Generate roof ridge curve (the iconic curved line)
     function roofCurve(zNorm) {
