@@ -1054,7 +1054,7 @@ body {
     transform: translateX(5px);
 }
 
-/* Base Operations Map */
+/* Base Operations — 3D Tongkonan */
 .base-operations {
     position: relative;
     width: 90%;
@@ -1062,21 +1062,22 @@ body {
     margin: 2rem auto 5rem;
     border-radius: 12px;
     overflow: hidden;
-    height: 350px;
-    background-image: url('https://images.unsplash.com/photo-1549471013-3364d7220b75?auto=format&fit=crop&w=1200&q=80');
-    background-size: cover;
-    background-position: center;
+    height: 400px;
+    background: #070a12;
     border: 1px solid rgba(255,255,255,0.05);
 }
 
 .map-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(7, 9, 15, 0.9) 0%, rgba(7, 9, 15, 0.4) 100%);
+    background: linear-gradient(to top, rgba(7, 9, 15, 0.85) 0%, rgba(7, 9, 15, 0.1) 60%, rgba(7, 9, 15, 0.3) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+    pointer-events: none;
+    z-index: 2;
 }
 
 .map-pin {

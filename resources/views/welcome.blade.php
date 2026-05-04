@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portofolio | Membangun Masa Depan dengan Kode & AI</title>
 
-    <!-- CSS & JS Assets Via Vite -->
+    
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -527,14 +527,15 @@
         </div>
     </section>
 
-    <!-- Base Operations Map -->
+    <!-- Base Operations — 3D Tongkonan -->
     <section class="base-operations fade-in">
+        <div id="tongkonan-canvas" style="width:100%; height:100%; position:absolute; top:0; left:0;"></div>
         <div class="map-overlay">
             <div class="map-pin">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#131722" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="4" fill="#9d4edd" stroke="none"></circle></svg>
             </div>
             <h3 class="base-title">Base Operations: SULSEL_ID</h3>
-            <p class="base-coords">KORDINAT: -5.1476° S, 119.4327° E</p>
+            <p class="base-coords">KOORDINAT: -5.1476° S, 119.4327° E</p>
         </div>
     </section>
 

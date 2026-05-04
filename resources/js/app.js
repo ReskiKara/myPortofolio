@@ -1,8 +1,10 @@
 import './bootstrap';
-import { initialize3DNetwork } from './3d-network';
+import { initBrainNetwork } from './3d-network';
+import { initTongkonan } from './3d-tongkonan';
 
 document.addEventListener('DOMContentLoaded', () => {
-    initialize3DNetwork();
+    initBrainNetwork();
+    initTongkonan();
 
     // Scroll Animation Observer
     const observerOptions = {
