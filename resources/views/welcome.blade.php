@@ -33,7 +33,7 @@
             <h1 class="title">MEMBANGUN MASA DEPAN DENGAN KODE & AI.</h1>
 
             <div class="cards-container">
-                <div class="capability-card">
+                <div class="capability-card stagger-item">
                     <div class="icon-box">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <div class="capability-card">
+                <div class="capability-card stagger-item">
                     <div class="icon-box">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
@@ -60,7 +60,7 @@
                     </div>
                 </div>
 
-                <div class="capability-card">
+                <div class="capability-card stagger-item">
                     <div class="icon-box">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
@@ -76,12 +76,14 @@
                 </div>
             </div>
 
-            <button class="primary-btn">
-                LIHAT PROYEK SAYA
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-            </button>
+            <a href="#experience" style="text-decoration: none;">
+                <button class="primary-btn">
+                    LIHAT PROYEK SAYA
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </a>
         </div>
 
         <div class="hero-right">
@@ -101,7 +103,7 @@
 
         <div class="skills-grid">
             <!-- 01 Frontend -->
-            <div class="skill-card purple-glow">
+            <div class="skill-card purple-glow stagger-item">
                 <div class="card-top">
                     <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
@@ -130,7 +132,7 @@
             </div>
 
             <!-- 02 Backend -->
-            <div class="skill-card cyan-glow">
+            <div class="skill-card cyan-glow stagger-item">
                 <div class="card-top">
                     <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
@@ -391,7 +393,7 @@
                 <div class="timeline-line"></div>
                 
                 <!-- Item 1: Computer Vision -->
-                <div class="timeline-item">
+                <div class="timeline-item stagger-item">
                     <div class="timeline-node purple-node"></div>
                     <div class="timeline-content">
                         <div class="tl-header">
@@ -410,7 +412,7 @@
                 </div>
 
                 <!-- Item 2: Mobile -->
-                <div class="timeline-item">
+                <div class="timeline-item stagger-item">
                     <div class="timeline-node cyan-node"></div>
                     <div class="timeline-content">
                         <div class="tl-header">
@@ -429,7 +431,7 @@
                 </div>
 
                 <!-- Item 3: Laravel Web -->
-                <div class="timeline-item">
+                <div class="timeline-item stagger-item">
                     <div class="timeline-node dim-node"></div>
                     <div class="timeline-content">
                         <div class="tl-header">
